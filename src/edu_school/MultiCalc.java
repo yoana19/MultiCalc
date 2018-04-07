@@ -206,7 +206,7 @@ public class MultiCalc extends JFrame {
 				} else if (formula == "Heat Transfer") {
 					lbl1.setText("Mass:");
 					lbl2.setText("Specific Heat:");
-					lbl3.setText("Temperature Change");
+					lbl3.setText("Temperature Change:");
 					lblTitle.setText("Heat Transfer");
 
 				} else if (formula == "Centripetal Force") {
@@ -595,7 +595,7 @@ public class MultiCalc extends JFrame {
 					JOptionPane.showMessageDialog(contentPane, "Incorrect Data");
 					return;
 				}
-				
+
 				double result = 0; // if (Double.toString(result).endsWith(".0")) {
 									// result = Math.round(result);}
 
