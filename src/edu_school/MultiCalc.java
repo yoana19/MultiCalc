@@ -587,13 +587,35 @@ public class MultiCalc extends JFrame {
 				double t1 = 0;
 				double t2 = 0;
 				double t3 = 0;
-				try {
-					t1 = Double.parseDouble(txt1.getText());
-					t2 = Double.parseDouble(txt2.getText());
-					t3 = Double.parseDouble(txt3.getText());
-				} catch (Exception e2) {
-					JOptionPane.showMessageDialog(contentPane, "Incorrect Data");
-					return;
+
+				if (!(txt2.isVisible() && txt3.isVisible()) && txt1.isVisible()) {
+					try {
+						t1 = Double.parseDouble(txt1.getText());
+					} catch (Exception e2) {
+						JOptionPane.showMessageDialog(contentPane, "Incorrect Data");
+						return;
+					}
+				}
+
+				if (!(txt3.isVisible()) && (txt1.isVisible() && txt2.isVisible())) {
+					try {
+						t1 = Double.parseDouble(txt1.getText());
+						t2 = Double.parseDouble(txt2.getText());
+					} catch (Exception e2) {
+						JOptionPane.showMessageDialog(contentPane, "Incorrect Data");
+						return;
+					}
+				}
+
+				if (txt1.isVisible() && txt2.isVisible() && txt3.isVisible()) {
+					try {
+						t1 = Double.parseDouble(txt1.getText());
+						t2 = Double.parseDouble(txt2.getText());
+						t3 = Double.parseDouble(txt3.getText());
+					} catch (Exception e2) {
+						JOptionPane.showMessageDialog(contentPane, "Incorrect Data");
+						return;
+					}
 				}
 
 				double result = 0; // if (Double.toString(result).endsWith(".0")) {
@@ -829,8 +851,4 @@ public class MultiCalc extends JFrame {
 		setFPanelElementsVisible(false);
 	}
 
-	private void setmainpanel(JLabel jLabel) {
-		// TODO Auto-generated method stub
-
-	}
 }
