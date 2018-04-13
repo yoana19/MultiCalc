@@ -16,6 +16,7 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.Set;
 import java.awt.event.ActionEvent;
 
@@ -617,15 +618,17 @@ public class MultiCalc extends JFrame {
 						return;
 					}
 				}
-
+				
 				double result = 0; // if (Double.toString(result).endsWith(".0")) {
 									// result = Math.round(result);}
 
 				String formula = (String) formulas.getSelectedItem();
 
+				DecimalFormat format = new DecimalFormat("0.#");
+				
 				if (formula == "Accerelation") {
 
-					result = (t1 - t2) / t3;
+					result = (t1 - t2) / t3;	
 
 				} else if (formula == "Frequency") {
 
@@ -821,7 +824,12 @@ public class MultiCalc extends JFrame {
 
 				}
 
-				txtAreaResult.setText(Double.toString(result));
+				if ((Double.toString(result)).endsWith(".0")) {
+					
+					txtAreaResult.setText((format.format(result)));
+				}
+				else {
+				txtAreaResult.setText((Double.toString(result))); } //txtAreaResult.setText((format.format(result)));
 			}
 		});
 		btnCalculate.setBounds(245, 207, 130, 45);
