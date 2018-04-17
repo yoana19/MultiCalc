@@ -116,7 +116,7 @@ public class MultiCalc extends JFrame {
 
 		JComboBox formulas = new JComboBox();
 		formulas.setBackground(new Color(102, 153, 204));
-		formulas.setModel(new DefaultComboBoxModel(new String[] { "Choose a Formula...", "Accerelation",
+		formulas.setModel(new DefaultComboBoxModel(new String[] { "Choose a Formula...", "Acceleration",
 				"Amount of a Tip", "Angular Velocity", "Area of Circle", "Area of Parallelogram", "Area of Rectangle",
 				"Area of Triangle", "Body Mass Index", "Celsius to Fahrenheit", "Celsius To Kelvin",
 				"Centripetal Force", "Circumference of Circle", "Cylinder Volume", "Deceleration", "Density",
@@ -144,11 +144,11 @@ public class MultiCalc extends JFrame {
 
 				}
 
-				if (formula == "Accerelation") {
+				if (formula == "Acceleration") {
 					lbl1.setText("Final Velocity:");
 					lbl2.setText("Initial Velocity:");
 					lbl3.setText("Time:");
-					lblTitle.setText("Accerelation");
+					lblTitle.setText("Acceleration");
 
 				} else if (formula == "Frequency") {
 					lbl1.setText("Number of Cycles:");
@@ -192,7 +192,7 @@ public class MultiCalc extends JFrame {
 
 				} else if (formula == "Tangential Acceleration") {
 					lbl1.setText("Radius of the Rotation:");
-					lbl2.setText("Angular Accerelation:");
+					lbl2.setText("Angular Acceleration:");
 					lbl3.setVisible(false);
 					txt3.setVisible(false);
 					lblTitle.setText("Tangential Acceleration");
@@ -224,7 +224,7 @@ public class MultiCalc extends JFrame {
 
 				} else if (formula == "Potential Energy: Earth's Gravity") {
 					lbl1.setText("Mass of the Object:");
-					lbl2.setText("Accerelation Due to Gravity:");
+					lbl2.setText("Acceleration Due to Gravity:");
 					lbl3.setText("Height:");
 					lblTitle.setText("Potential Energy: Earth's Gravity");
 
@@ -626,7 +626,7 @@ public class MultiCalc extends JFrame {
 
 				DecimalFormat format = new DecimalFormat("0.#");
 				
-				if (formula == "Accerelation") {
+				if (formula == "Acceleration") {
 
 					result = (t1 - t2) / t3;	
 
@@ -654,7 +654,7 @@ public class MultiCalc extends JFrame {
 
 					result = t1 * t2;
 
-				} else if (formula == "Tangential Accerelation") {
+				} else if (formula == "Tangential Acceleration") {
 
 					result = t1 * t2;
 
